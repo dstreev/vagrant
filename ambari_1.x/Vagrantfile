@@ -5,6 +5,7 @@
 VAGRANTFILE_API_VERSION = "2"
 
 boxes = [
+         {:name => "c1repo", :ipaddress => "192.168.90.6", :roles => ["base"], :recipes => [], :json => {}},
          {:name => "c1gw", :ipaddress => "192.168.90.10", :roles => ["base", "ambari"], :recipes => [], :json => {}},
          {:name => "c1nn", :ipaddress => "192.168.90.11", :roles => ["base"], :recipes => [], :json => {}},
          {:name => "c1jt", :ipaddress => "192.168.90.12", :roles => ["base"], :recipes => [], :json => {}},
@@ -46,7 +47,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         chef.cookbooks_path = ["cookbooks", "site-cookbooks"]
         chef.data_bags_path = "databags"
         chef.roles_path = "roles"
-
+		
+		
         opts[:roles].each do |role|
           chef.add_role(role)
         end
@@ -54,6 +56,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         opts[:recipes].each do |recipe|
           chef.add_recipe(recipe)
         end
+        
+#         chef.json = {
+#     		"authorization" => {
+#         		"sudo" => {
+#             		"users" => [ "vagrant" ],
+#             		"passwordless" => true,
+#         		}
+#     		}
+#   		}
       end
     end
   end

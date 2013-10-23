@@ -19,3 +19,8 @@ doc/
 
 # This will exclude cookbooks sync'd locally from web.
 cookbooks
+
+# Exclude the .vagrant directories
+.vagrant
+
+*.lock

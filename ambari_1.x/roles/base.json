@@ -4,9 +4,17 @@
   "json_class": "Chef::Role",
   "description": "This is the base role",
   "default_attributes": {
+  	"java": {
+    	"oracle": {
+       		"accept_oracle_download_terms": true
+     	},
+     	"jdk_version": "7"
+   	}
   },
   "run_list": [
     "recipe[selinux::disabled]",
-    "recipe[ntp]"
+    "recipe[ntp]",
+    "recipe[iptables::disabled]",
+    "recipe[java::oracle]"
   ]
 }

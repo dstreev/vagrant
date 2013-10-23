@@ -35,11 +35,3 @@ end
 bash "ambari-server_start" do
   code "sudo ambari-server start"
 end
-
-bash "iptables stop" do
-  code "sudo service iptables stop"
-end
-
-bash "iptables off" do
-  code "sudo chkconfig iptables off"
-end
