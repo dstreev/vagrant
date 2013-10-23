@@ -11,3 +11,7 @@ cookbook 'yumrepo'
 
 cookbook 'iptables', :git => 'https://github.com/opscode-cookbooks/iptables'
 cookbook 'java', :git => 'https://github.com/opscode-cookbooks/java'
+
+cookbook 'tomcat', :git => 'https://github.com/opscode-cookbooks/tomcat'
+cookbook 'activemq', :git => 'https://github.com/opscode-cookbooks/activemq'
+cookbook 'hostsfile', :git => 'https://github.com/customink-webops/hostsfile'
