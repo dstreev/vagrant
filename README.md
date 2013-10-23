@@ -9,6 +9,10 @@ vagrant-hostmanager (1.2.3)
 vagrant-vmware-fusion (2.0.8)
 vagrant-librarian-chef (0.1.4)
 
+# Get the Boxes and keys
+
+[Dropbox](https://www.dropbox.com/sh/eamvf0ilsu8y68k/9w1fY-AmcR)
+
 # Creating a base CentOS 6.4 Base VM
 
 | Provider | References | Notes |
