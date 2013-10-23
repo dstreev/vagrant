@@ -1,0 +1,12 @@
+{
+  "name": "base",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "This is the base role",
+  "default_attributes": {
+  },
+  "run_list": [
+    "recipe[selinux::disabled]",
+    "recipe[ntp]"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "ambari",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "Sets up an ambari server",
+  "default_attributes": {
+  },
+  "run_list": [
+    "recipe[yumrepo]",
+    "recipe[ambari]"
+  ]
+}

@@ -16,3 +16,6 @@ tmp
 .yardoc
 _yardoc
 doc/
+
+# This will exclude cookbooks sync'd locally from web.
+cookbooks
