@@ -3,18 +3,25 @@
   "chef_type": "role",
   "json_class": "Chef::Role",
   "description": "This is the base role",
+  "run_list": [
+    "recipe[selinux::disabled]",
+    "recipe[iptables::disabled]",
+    "recipe[java]"
+  ],
   "default_attributes": {
   	"java": {
+  		"install_flavor":"oracle",
     	"oracle": {
        		"accept_oracle_download_terms": true
      	},
-     	"jdk_version": "7"
+     	"jdk_version": "7",
+     	"jdk": {
+     		"7": {
+     			"x86_64": {
+     				"url": "http://192.168.90.1/~dstreever/jdk-7u45-linux-x64.tar.gz"
+     			}
+     		}
+     	}	
    	}
-  },
-  "run_list": [
-    "recipe[selinux::disabled]",
-    "recipe[ntp]",
-    "recipe[iptables::disabled]",
-    "recipe[java::oracle]"
-  ]
+  }
 }

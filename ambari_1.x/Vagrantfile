@@ -5,13 +5,13 @@
 VAGRANTFILE_API_VERSION = "2"
 
 boxes = [
-         {:name => "c1repo", :ipaddress => "192.168.90.6", :roles => ["base"], :recipes => [], :json => {}},
-         {:name => "c1gw", :ipaddress => "192.168.90.10", :roles => ["base", "ambari"], :recipes => [], :json => {}},
+         #{:name => "c1repo", :ipaddress => "192.168.90.6", :roles => ["base"], :recipes => [], :json => {}},
+         {:name => "c1gw", :ipaddress => "192.168.90.10", :roles => ["base", "ambari"], :recipes => ["tomcat"], :json => {}},
          {:name => "c1nn", :ipaddress => "192.168.90.11", :roles => ["base"], :recipes => [], :json => {}},
          {:name => "c1jt", :ipaddress => "192.168.90.12", :roles => ["base"], :recipes => [], :json => {}},
-         {:name => "c1dn1", :ipaddress => "192.168.90.15", :roles => ["base"], :recipes => [], :json => {}},
-         {:name => "c1dn2", :ipaddress => "192.168.90.16", :roles => ["base"], :recipes => [], :json => {}},
-         {:name => "c1dn3", :ipaddress => "192.168.90.17", :roles => ["base"], :recipes => [], :json => {}},
+         {:name => "c1dn1", :ipaddress => "192.168.90.15", :roles => ["base"], :recipes => ["tomcat"], :json => {}},
+         {:name => "c1dn2", :ipaddress => "192.168.90.16", :roles => ["base"], :recipes => ["tomcat"], :json => {}},
+         {:name => "c1dn3", :ipaddress => "192.168.90.17", :roles => ["base"], :recipes => ["tomcat"], :json => {}},
 ]
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
@@ -44,10 +44,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       vmconfig.vm.network :private_network, ip: opts[:ipaddress]
 
       vmconfig.vm.provision :chef_solo do |chef|
+	    chef.arguments = '-l debug'
         chef.cookbooks_path = ["cookbooks", "site-cookbooks"]
         chef.data_bags_path = "databags"
         chef.roles_path = "roles"
-		
 		
         opts[:roles].each do |role|
           chef.add_role(role)
