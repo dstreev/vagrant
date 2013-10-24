@@ -6,7 +6,7 @@ VAGRANTFILE_API_VERSION = "2"
 
 boxes = [
          #{:name => "c1repo", :ipaddress => "192.168.90.6", :roles => ["base"], :recipes => [], :json => {}},
-         {:name => "c1gw", :ipaddress => "192.168.90.10", :roles => ["base", "ambari"], :recipes => ["tomcat"], :json => {}},
+         {:name => "c1gw", :ipaddress => "192.168.90.10", :roles => ["base", "ambari"], :recipes => ["tomcat","activemq"], :json => {}},
          {:name => "c1nn", :ipaddress => "192.168.90.11", :roles => ["base"], :recipes => [], :json => {}},
          {:name => "c1jt", :ipaddress => "192.168.90.12", :roles => ["base"], :recipes => [], :json => {}},
          {:name => "c1dn1", :ipaddress => "192.168.90.15", :roles => ["base"], :recipes => ["tomcat"], :json => {}},

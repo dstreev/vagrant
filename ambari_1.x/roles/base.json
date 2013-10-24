@@ -18,10 +18,23 @@
      	"jdk": {
      		"7": {
      			"x86_64": {
-     				"url": "http://192.168.90.1/~dstreever/jdk-7u45-linux-x64.tar.gz"
+   			"_comment": "This url is to the Network Gateway, which should be you local host.  Assumes you have already retrieved the artifacts and placed them in on your web server for distribution.  On a mac, the Web Server can be started with: sudo apachectl start .  Then the Root Docs folder is at /Library/WebServer/Documents.  Create an 'artifacts' folder an place the artifacts there.",
+     				"url": "http://192.168.90.1/artifacts/jdk-7u45-linux-x64.tar.gz"
      			}
      		}
      	}	
+   	},
+   	"tomcat": {
+   		"7": {
+   			"_comment": "This url is to the Network Gateway, which should be you local host.  Assumes you have already retrieved the artifacts and placed them in on your web server for distribution.  On a mac, the Web Server can be started with: sudo apachectl start .  Then the Root Docs folder is at /Library/WebServer/Documents.  Create an 'artifacts' folder an place the artifacts there.",
+   			"url": "http://192.168.90.1/artifacts/apache-tomcat-7.0.42.tar.gz"
+   		}
    	}
+  },
+  "override_attributes": {
+  	"tomcat": {
+  		"http_port": 8081
+  	}
   }
+  
 }
