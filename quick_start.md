@@ -19,11 +19,9 @@ Built on a Mac (just saying), should work on other platforms, but you'll have to
 	- `vagrant up`
 * Goto the [Ambari Console on the master server](http://tmstr.hortonworks.vagrant:8080)
 * Install your cluster using the following hosts:
-```
-tmstr.hwx.test
-td1.hwx.test
-td2.hwx.test
-```
+	- `tmstr.hwx.test`
+	- `td1.hwx.test`
+	- `td2.hwx.test`
 * Points during cluster installation:
 	- Reset the Replication Factor to 1 or 2, since there will only be 2 datanodes.
 	- The `mstr` server is configured with more memory to support all the master services, so put them all there.
