@@ -1,9 +1,13 @@
 # Vagrant HDP VM Cluster Buildout
 ===========
 
-For the impatient, checkout the [Quick Start Guide](quick_start.md).  This will get you up and running quickly.  I you have questions, keep reading.
+For the impatient, checkout the [Quick Start Guide](quick_start.md).  This will get you up and running quickly.  
 
-Vagrant configurations for VM and VM Cluster configurations.
+If you have questions, keep reading.
+
+I did this so I could build-out consistent VM's to test out multiple scenario's regarding HDP installations.  The process is based on [Chef](http://docs.opscode.com), so I believe the process can be used to support full scale cluster buildouts for groups using "Chef".  I used this process to vet out the ["Local-Repo" process](hdp_repo).
+
+# Vagrant configurations for VM and VM Cluster configurations.
 
 [Vagrant](http://www.vagrantup.com) is used to automate the provisioning of hosts via "VirtualBox" or "VMware Fusion".  To start, you need a base VM.  The references I used are below, but save yourself some time and headache by downloading the VirtualBox base machine I've created from Dropbox. Link below.
 
