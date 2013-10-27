@@ -1,9 +1,9 @@
 # Vagrant HDP VM Cluster Buildout
-=======
+===========
 
 Vagrant configurations for VM and VM Cluster configurations.
 
-Vagrant is used to automate the provisioning of hosts via "VirtualBox" or "VMware Fusion".  To start, you need to built a base VM.  The references I used are below, but save yourself some time and headache by downloading the VirtualBox base machine I've created from Dropbox. Link below.
+[Vagrant](http://www.vagrantup.com) is used to automate the provisioning of hosts via "VirtualBox" or "VMware Fusion".  To start, you need a base VM.  The references I used are below, but save yourself some time and headache by downloading the VirtualBox base machine I've created from Dropbox. Link below.
 
 Once you've retrieved the prepared VagrantBox, add it to your vagrant box list with:
 
@@ -22,6 +22,8 @@ Vagrant uses [chef](http://docs.opscode.com) to configure the boxes.  I've creat
 Save yourself some time and download the preconfigured VagrantBox for VirtualBox.  The box 'CentOS_64_x64.20131022.virtualbox.box' includes a *vagrant* user with the *keys* in the 'keys' folder.  Copy the 'keys/vagrant' file (the ssh private rsa key) to your ~/.ssh directory.  The Vagrantfile's created in the vagrant projects below will override the default ssh keys expected by vagrant and use this one.
 
 [Dropbox](https://www.dropbox.com/sh/eamvf0ilsu8y68k/9w1fY-AmcR)
+
+The keys above are used by `vagrant ssh` to log into the boxes that are built.  The template box, above, has been built with an additional user `vagrant` that has `sudo` rights on the box.
 
 # Projects
 
