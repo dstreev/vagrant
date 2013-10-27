@@ -1,6 +1,8 @@
 # Vagrant HDP VM Cluster Buildout
 ===========
 
+For the impatient, checkout the [Quick Start Guide](quick_start.md).  This will get you up and running quickly.  I you have questions, keep reading.
+
 Vagrant configurations for VM and VM Cluster configurations.
 
 [Vagrant](http://www.vagrantup.com) is used to automate the provisioning of hosts via "VirtualBox" or "VMware Fusion".  To start, you need a base VM.  The references I used are below, but save yourself some time and headache by downloading the VirtualBox base machine I've created from Dropbox. Link below.
