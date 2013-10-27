@@ -1,0 +1,23 @@
+{
+  "name": "ambari",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "Sets up an ambari server",
+  "default_attributes": {
+  	"ambari": {
+  		"remote_repo_file": "http://repo.hortonworks.vagrant/repos/local.yum.repos.d/ambari.repo",
+  		"repo": {
+  			"local":true,
+  			"local_url": "http://repo.hortonworks.vagrant/repos"
+  		},
+  		"jdk": {
+  			"alt": true,
+  			"home": "/usr/lib/jvm/jdk1.7.0_45"
+  		}
+  	}
+  },
+  "run_list": [
+    "recipe[yumrepo]",
+    "recipe[ambari]"
+  ]
+}

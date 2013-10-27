@@ -1,4 +1,4 @@
-vagrant
+# Vagrant HDP VM Cluster Buildout
 =======
 
 Vagrant configurations for VM and VM Cluster configurations.
@@ -15,15 +15,42 @@ Once you've retrieved the prepared VagrantBox, add it to your vagrant box list w
 - (optional) vagrant-vmware-fusion (2.0.8)
 - vagrant-librarian-chef (0.1.4)
 
+Vagrant uses [chef](http://docs.opscode.com) to configure the boxes.  I've created several special chef recipes for HDP to assist with the process.  If you're interested, they can be found [here](https://github.com/dstreev/chef_recipes).
+
 # Get the Boxes and keys
 
-Save yourself some time and download the preconfigured VagrantBox for VirtualBox.  The box 'CentOS_64_x64.20131022.virtualbox.box' includes a vagrant user with the keys in the 'keys' folder.  Copy the 'keys/vagrant' file (the ssh private rsa key) to you ~/.ssh directory.  The Vagrantfile's created in the vagrant projects below will override the default ssh keys expected by vagrant and use this one.
+Save yourself some time and download the preconfigured VagrantBox for VirtualBox.  The box 'CentOS_64_x64.20131022.virtualbox.box' includes a *vagrant* user with the *keys* in the 'keys' folder.  Copy the 'keys/vagrant' file (the ssh private rsa key) to your ~/.ssh directory.  The Vagrantfile's created in the vagrant projects below will override the default ssh keys expected by vagrant and use this one.
 
 [Dropbox](https://www.dropbox.com/sh/eamvf0ilsu8y68k/9w1fY-AmcR)
 
+# Projects
+
+If you use the projects here without modifications, you'll need to create a network in VirtualBox that matches the 192.168.90/24 network used in these configurations. 
+
+VirtualBox -> Preferences -> Network -> Host-only Networks.
+
+![VirtualBox Network](virtualbox_network.png "VirtualBox Image")
+
+## [HDP Repo](hdp_repo)
+
+*WARNING*: The above box is configured with a 20GB HD, which will *NOT* be enough to support the HDP Repo.  You have four options:
+- Find another vagrant CentOS Base Virtual Box to use for this installation. Try (www.vagrantbox.es). I'm working on building a base next. ;^)
+- Build a large enough Box for the installation on your own.  I've included a bunch of tips 'below' that will help you build a VirtualBox VM that can be used by Vagrant.
+- Start with the above box and add another HDD to it via VirtualBox.  You'll need to extend the LVM to include the additional drive.
+
+Once you've acquired a box sizable enough to build a repo (35GB at least), use the `Vagrantfile` in this project to configuring and populate it with sync'd repos and some key artifacts needed to assist with the build of an HDP cluster via "local repo".
+
+## [HDP Cluster Buildout](hdp_cluster_buildout)
+
+This Vagrant project is configured to buildout a 3 node cluster and install Ambari on the `tmstr` node.  Ambari will be configured to pull from internet repos sources. 
+
+## [HDP Cluster Buildout - Local Repo](hdp_cluster_buildout_local)
+
+This Vagrant project is configured to buildout a 3 node cluster and install Ambari on the `tlmstr` node.  Ambari will be configured to use the local-repo above. 
+
 # Observations / tips
 
-1. If you want to use VMware Fusion as your 'default' provider, add `VAGRANT_DEFAULT_PROVIDER=vmware_fusion` to your environment.  But beware, if you also use 'VirtualBox' you'll have to specifically supply the `--provider` flag for most commands, to overcome the default set by the environment variable.
+1. If you want to use VMware Fusion as your 'default' provider, add `VAGRANT_DEFAULT_PROVIDER=vmware_fusion` to your environment.  Beware, if you also use 'VirtualBox' you'll have to specifically supply the `--provider` flag for most commands, to overcome the default set by the environment variable.
 
 # Creating a base CentOS 6.4 Base VM
 <table>
