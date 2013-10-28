@@ -23,5 +23,7 @@ Built on a Mac (just saying), should work on other platforms, but you'll have to
 	- `td1.hwx.test`
 	- `td2.hwx.test`
 * Points during cluster installation:
+	- The configuration is setup to support a `sudo` installation with Ambari.  Use the user `vagrant`
+	- The private key to use in Ambari during installation is from the [hdp-prep Chef recipe](https://github.com/dstreev/chef_recipes/blob/master/hdp-prep/templates/default/id_rsa)
 	- Reset the Replication Factor to 1 or 2, since there will only be 2 datanodes.
 	- The `mstr` server is configured with more memory to support all the master services, so put them all there.
