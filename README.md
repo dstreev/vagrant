@@ -1,7 +1,9 @@
 # Vagrant HDP VM Cluster Buildout
 ===========
 
-For the impatient, checkout the [Quick Start Guide](quick_start.md).  This will get you up and running quickly.  
+For the impatient, checkout the [Quick Start Guide](quick_start.md).  This will get you up and running quickly. 
+
+From nothing to a 3-5 node local vm cluster in 30-35 minutes.  That includes a full installation of HDP 2.0 GA via a Local Repo. 
 
 If you have questions, keep reading.
 
