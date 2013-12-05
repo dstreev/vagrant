@@ -19,7 +19,7 @@ cookbook 'java'
 # cookbook 'ambari'
 cookbook 'hostsfile', :git => 'https://github.com/customink-webops/hostsfile'
 
-cookbook 'ambari', :git => 'https://github.com/dstreev/chef_recipes', :path => 'ambari', :ref => "ambari_v0.1"
+cookbook 'ambari', :git => 'https://github.com/dstreev/chef_recipes', :path => 'ambari', :ref => "ambari_v0.2"
 
-cookbook 'hdp-prep', :git => 'https://github.com/dstreev/chef_recipes', :path => 'hdp-prep', :ref => "hdp-prep_v0.2"
+cookbook 'hdp-prep', :git => 'https://github.com/dstreev/chef_recipes', :path => 'hdp-prep', :ref => "hdp-prep_v0.3"
 cookbook 'host-entry', :git => 'https://github.com/dstreev/chef_recipes', :path => 'host-entry', :ref => "host-entry_v0.1"

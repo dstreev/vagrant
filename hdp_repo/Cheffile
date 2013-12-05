@@ -6,4 +6,4 @@ site 'http://community.opscode.com/api/v1'
 cookbook 'apache2'
 cookbook 'iptables'
 
-cookbook 'hdp-repo', :git => 'https://github.com/dstreev/chef_recipes', :path => 'hdp-repo', :ref => "hdp-repo_v0.1"
+cookbook 'hdp-repo', :git => 'https://github.com/dstreev/chef_recipes', :path => 'hdp-repo', :ref => "hdp-repo_v0.2"

@@ -13,9 +13,16 @@
        		"accept_oracle_download_terms": true
      	},
      	"jdk_version": "7",
+     	"jdk": {
+     		"7": {
+     			"x86_64": {
+		   			"_comment": "This assumes a local repo box matching the 'hostentry' above and with the jdk archive downloaded to it for local retrieval",
+     				"url": "http://repo.hortonworks.vagrant/repos/artifacts/jdk-7u45-linux-x64.tar.gz"
+     			}
+     		}
+     	}	
+
    	}
-  },
-  "override_attributes": {
   },
   "run_list": [
   	"recipe[host-entry]",
