@@ -7,6 +7,11 @@
     "hostentries": [
       {"ipaddress":"192.168.90.6", "hostname":"repo.hortonworks.vagrant"}
     ],
+    "hdp-prep": {
+        "ssh": {
+            "user": "vagrant"
+        }
+    },
   	"java": {
   		"install_flavor":"oracle",
     	"oracle": {
