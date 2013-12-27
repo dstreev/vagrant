@@ -23,3 +23,8 @@ cookbook 'ambari', :git => 'https://github.com/dstreev/chef_recipes', :path => '
 
 cookbook 'hdp-prep', :git => 'https://github.com/dstreev/chef_recipes', :path => 'hdp-prep', :ref => "hdp-prep_v0.3"
 cookbook 'host-entry', :git => 'https://github.com/dstreev/chef_recipes', :path => 'host-entry', :ref => "host-entry_v0.1"
+
+# Breakfix for Java installation. See: https://tickets.opscode.com/browse/COOK-4143
+# For some reason, the java cookbook has a dependency on the windows cookbook. arg....!!
+cookbook 'windows', :git => "https://github.com/opscode-cookbooks/windows.git",
+:ref => "6346c0da614fad2152bb34184e1f7e35ebf662c5"
