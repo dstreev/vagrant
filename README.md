@@ -9,7 +9,7 @@ If you have questions, keep reading.
 
 I did this so I could build-out consistent VM's to test out multiple scenario's regarding HDP installations.  The process is based on [Chef](http://docs.opscode.com), so I believe the process can be used to support full scale cluster buildouts for groups using "Chef".  I used this process to vet out the ["Local-Repo" process](hdp_repo).
 
-# Vagrant configurations for VM and VM Cluster configurations.
+# Vagrant (v.1.4.1) configurations for VM and VM Cluster configurations.
 
 [Vagrant](http://www.vagrantup.com) is used to automate the provisioning of hosts via "VirtualBox" or "VMware Fusion".  To start, you need a base VM.  The references I used are below, but save yourself some time and headache by downloading the VirtualBox base machine I've created from Dropbox. Link below.
 
@@ -19,8 +19,8 @@ Once you've retrieved the prepared VagrantBox, add it to your vagrant box list w
 
 # Vagrant Plugin's Used
 
-- vagrant-hostmanager (1.2.3)
-- (optional) vagrant-vmware-fusion (2.0.8)
+- vagrant-hostmanager (1.3.0)
+- (optional) vagrant-vmware-fusion (2.2.4)
 - vagrant-librarian-chef (0.1.4)
 
 Vagrant uses [chef](http://docs.opscode.com) to configure the boxes.  I've created several special chef recipes for HDP to assist with the process.  If you're interested, they can be found [here](https://github.com/dstreev/chef_recipes).
