@@ -45,6 +45,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	  # Using the above "domain" value to set the hostname.
       vmconfig.vm.hostname = "%s" % opts[:name]+"."+domain.to_s
       vmconfig.vm.network :private_network, ip: opts[:ipaddress]
+	  
+	  # Add host aliases to /etc/hosts
+      vmconfig.hostmanager.aliases = opts[:name]
 
       vmconfig.vm.provision :chef_solo do |chef|
         chef.cookbooks_path = ["cookbooks", "site-cookbooks"]
