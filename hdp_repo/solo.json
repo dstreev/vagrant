@@ -1,7 +1,6 @@
 {
     "name": "HDP-Repo",
     "chef_type": "role",
-    "json_class": "Chef::Role",
     "description": "This is the base role for an HDP Repo Buildout",
     "default_attributes": {
         "hdp_repo": {
