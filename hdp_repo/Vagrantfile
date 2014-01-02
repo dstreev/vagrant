@@ -5,7 +5,7 @@
 VAGRANTFILE_API_VERSION = "2"
 
 boxes = [
-	{:name => "repo", :ipaddress => "192.168.90.6", :roles => ["hdp-repo"], :recipes => [], :json =>
+	{:name => "repo", :ipaddress => "192.168.90.6", :roles => [], :recipes => ["hdp-repo"], :json =>
     	{
         	"hdp_repo" => {
          		"repo_host" => "repo.hortonworks.vagrant"
