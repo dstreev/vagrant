@@ -1,0 +1,19 @@
+{
+    "name": "HDP-Repo",
+    "chef_type": "role",
+    "json_class": "Chef::Role",
+    "description": "This is the base role for an HDP Repo Buildout",
+    "default_attributes": {
+        "hdp_repo": {
+            "repo_host": "repo.hortonworks.vagrant"
+        },
+        "apache": {
+            "default_site_enabled": true
+        }
+
+    },
+    "run_list": [
+        "recipe[hdp-repo]"
+    ]
+
+}
